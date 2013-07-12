@@ -11,6 +11,7 @@ Add to your composer.json:
 ```json
 "require": {
     ...
+    "brighttalk/acs-query-builder": "dev-master",
     "brighttalk/acs-query-builder-bundle": "dev-master"
 }
 ```
