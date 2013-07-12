@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="brighttalk_acs_query_builder.expression_builder.class">BrightTALK\lib\ACSQueryBuilder\Expression\ExpressionBuilder</parameter>
+        <parameter key="brighttalk_acs_query_builder.composites_factory.class">BrightTALK\lib\ACSQueryBuilder\Expression\Factory\CompositesFactory</parameter>
+        <parameter key="brighttalk_acs_query_builder.comparison_factory.class">BrightTALK\lib\ACSQueryBuilder\Expression\Factory\ComparisonFactory</parameter>
+        <parameter key="brighttalk_acs_query_builder.query_builder.class">BrightTALK\lib\ACSQueryBuilder\QueryBuilder</parameter>
+        <parameter key="brighttalk_acs_query_builder.query_factory.class">BrightTALK\lib\ACSQueryBuilder\Factory\QueryFactory</parameter>
+        <parameter key="brighttalk_acs_query_builder.query_builder_factory.class">BrightTALK\lib\ACSQueryBuilder\Factory\QueryBuilderFactory</parameter>
+        <parameter key="brighttalk_acs_query_builder.query.class">BrightTALK\lib\ACSQueryBuilder\Query</parameter>
+    </parameters>
+
+    <services>
+        <service id="brighttalk_acs_query_builder.composites_factory" class="%brighttalk_acs_query_builder.composites_factory.class%" public="false">
+        </service>
+
+        <service id="brighttalk_acs_query_builder.comparison_factory" class="%brighttalk_acs_query_builder.comparison_factory.class%" public="false">
+        </service>
+
+        <service id="brighttalk_acs_query_builder.expression_builder" class="%brighttalk_acs_query_builder.expression_builder.class%" public="false">
+            <argument type="service" id="brighttalk_acs_query_builder.composites_factory" />
+            <argument type="service" id="brighttalk_acs_query_builder.comparison_factory" />
+        </service>
+
+        <service id="brighttalk_acs_query_builder.query" class="%brighttalk_acs_query_builder.query.class%" factory-class="%brighttalk_acs_query_builder.query_factory.class%" factory-method="buildQuery" public="false">
+        </service>
+
+        <service id="brighttalk_acs_query_builder.query_builder_factory" class="%brighttalk_acs_query_builder.query_builder_factory.class%">
+            <argument type="service" id="brighttalk_acs_query_builder.expression_builder" />
+            <argument type="service" id="brighttalk_acs_query_builder.query" />
+        </service>
+    </services>
+</container>

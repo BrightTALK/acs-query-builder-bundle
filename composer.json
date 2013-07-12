@@ -1,0 +1,32 @@
+{
+    "name": "brighttalk/acs-query-builder-bundle",
+    "homepage": "http://www.brighttalk.com",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "BrightTALK",
+            "homepage": "http://www.brighttalk.com"
+        },
+        {
+            "name": "Ricardo Oliveira",
+            "email": "roliveira@brighttalk.com"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.3",
+        "brighttalk/acs-query-builder": "dev-trunk"
+    },
+
+    "require-dev": {
+
+    },
+
+    "autoload": {
+        "psr-0": {
+            "BrightTALK\\Bundle\\ACSQueryBuilderBundle": "src/"
+        }
+    },
+
+    "minimum-stability": "dev"
+}
