@@ -8,6 +8,7 @@
         <parameter key="brighttalk_acs_query_builder.expression_builder.class">BrightTALK\lib\ACSQueryBuilder\Expression\ExpressionBuilder</parameter>
         <parameter key="brighttalk_acs_query_builder.composites_factory.class">BrightTALK\lib\ACSQueryBuilder\Expression\Factory\CompositesFactory</parameter>
         <parameter key="brighttalk_acs_query_builder.comparison_factory.class">BrightTALK\lib\ACSQueryBuilder\Expression\Factory\ComparisonFactory</parameter>
+        <parameter key="brighttalk_acs_query_builder.literal_factory.class">BrightTALK\lib\ACSQueryBuilder\Expression\Factory\LiteralFactory</parameter>
         <parameter key="brighttalk_acs_query_builder.query_builder.class">BrightTALK\lib\ACSQueryBuilder\QueryBuilder</parameter>
         <parameter key="brighttalk_acs_query_builder.query_factory.class">BrightTALK\lib\ACSQueryBuilder\Factory\QueryFactory</parameter>
         <parameter key="brighttalk_acs_query_builder.query_builder_factory.class">BrightTALK\lib\ACSQueryBuilder\Factory\QueryBuilderFactory</parameter>
@@ -21,9 +22,13 @@
         <service id="brighttalk_acs_query_builder.comparison_factory" class="%brighttalk_acs_query_builder.comparison_factory.class%" public="false">
         </service>
 
+        <service id="brighttalk_acs_query_builder.literal_factory" class="%brighttalk_acs_query_builder.literal_factory.class%" public="false">
+        </service>
+
         <service id="brighttalk_acs_query_builder.expression_builder" class="%brighttalk_acs_query_builder.expression_builder.class%" public="false">
             <argument type="service" id="brighttalk_acs_query_builder.composites_factory" />
             <argument type="service" id="brighttalk_acs_query_builder.comparison_factory" />
+            <argument type="service" id="brighttalk_acs_query_builder.literal_factory" />
         </service>
 
         <service id="brighttalk_acs_query_builder.query" class="%brighttalk_acs_query_builder.query.class%" factory-class="%brighttalk_acs_query_builder.query_factory.class%" factory-method="buildQuery" public="false">
