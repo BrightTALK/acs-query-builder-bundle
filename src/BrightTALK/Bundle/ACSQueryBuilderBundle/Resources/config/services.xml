@@ -38,5 +38,7 @@
             <argument type="service" id="brighttalk_acs_query_builder.expression_builder" />
             <argument type="service" id="brighttalk_acs_query_builder.query" />
         </service>
+
+        <service id="brighttalk_acs_query_builder.query_builder" class="%brighttalk_acs_query_builder.query_builder.class%" factory-service="brighttalk_acs_query_builder.query_builder_factory" factory-method="createQueryBuilder" />
     </services>
 </container>
