@@ -1,5 +1,6 @@
 {
     "name": "brighttalk/acs-query-builder-bundle",
+    "description": "Integration of Amazon Cloud Search Query Builder library into the symfony2 framework",
     "homepage": "http://www.brighttalk.com",
     "license": "BSD-2-Clause",
     "authors": [
