@@ -16,7 +16,7 @@
 
     "require": {
         "php": ">=5.3.3",
-        "brighttalk/acs-query-builder": "0.1.0"
+        "brighttalk/acs-query-builder": "0.*"
     },
 
     "autoload": {
