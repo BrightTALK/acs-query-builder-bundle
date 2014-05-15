@@ -15,7 +15,7 @@
 
     "require": {
         "php": ">=5.3.3",
-        "brighttalk/acs-query-builder": "dev-master"
+        "brighttalk/acs-query-builder": "0.*"
     },
 
     "require-dev": {
